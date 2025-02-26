@@ -105,6 +105,9 @@ public struct DirectoryManager {
             "Mango" : [ // SNES
                 "roms" : [:]
             ],
+            "Peach" : [ // NES
+                "roms" : [:]
+            ],
             "Tomato" : [ // GBA
                 "roms" : [:]
             ]
