@@ -36,4 +36,19 @@ public struct MissingFile : Codable, Hashable, @unchecked Sendable {
     public let importance: Importance
     public let isSystemFile: Bool
     public let name, nameWithoutExtension: String
+    
+    public func `import`(from url: URL) throws {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        if #available(iOS 16, *) {
+            try FileManager.default.copyItem(at: url, to: documentDirectory
+                .appending(path: core)
+                .appending(path: "sysdata")
+                .appending(component: name))
+        } else {
+            try FileManager.default.copyItem(at: url, to: documentDirectory
+                .appendingPathComponent(core, conformingTo: .folder)
+                .appendingPathComponent("sysdata", conformingTo: .folder)
+                .appendingPathComponent(name, conformingTo: .fileURL))
+        }
+    }
 }

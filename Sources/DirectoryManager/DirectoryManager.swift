@@ -48,8 +48,11 @@ public struct DirectoryManager {
                 ]
             ],
             "Grape" : [ // NDS/NDSi
+                "cheats" : [:],
                 "config" : [:],
                 "roms" : [:],
+                "saves" : [:],
+                "states" : [:],
                 "sysdata" : [
                     "bios7.bin" : .init(
                         core: "Grape",
@@ -71,15 +74,7 @@ public struct DirectoryManager {
                         importance: .required,
                         isSystemFile: true,
                         name: "firmware.bin",
-                        nameWithoutExtension: "firmware"),
-                    "gba_bios.bin" : .init(
-                        details: "Game Boy Advance games will require this file",
-                        core: "Grape",
-                        extension: "bin",
-                        importance: .optional,
-                        isSystemFile: true,
-                        name: "gba_bios.bin",
-                        nameWithoutExtension: "gba_bios")
+                        nameWithoutExtension: "firmware")
                 ]
             ],
             "Guava" : [ // N64
@@ -109,7 +104,18 @@ public struct DirectoryManager {
                 "roms" : [:]
             ],
             "Tomato" : [ // GBA
-                "roms" : [:]
+                "roms" : [:],
+                "saves" : [:],
+                "states" : [:],
+                "sysdata" : [
+                    "bios.bin" : .init(
+                        core: "Tomato",
+                        extension: "bin",
+                        importance: .required,
+                        isSystemFile: true,
+                        name: "bios.bin",
+                        nameWithoutExtension: "bios")
+                ]
             ]
         ]
     }
