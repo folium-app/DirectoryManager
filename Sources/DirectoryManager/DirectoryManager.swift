@@ -8,19 +8,6 @@ public struct DirectoryManager {
     
     fileprivate var directories: [String : [String : [String : MissingFile]]] {
         [
-            "Cherry" : [ // PS2
-                "memcards" : [:],
-                "roms" : [:],
-                "sysdata" : [
-                    "bios.bin" : .init(
-                        core: "Cherry",
-                        extension: "bin",
-                        importance: .required,
-                        isSystemFile: true,
-                        name: "bios.bin",
-                        nameWithoutExtension: "bios")
-                ]
-            ],
             "Cytrus" : [ // 3DS
                 "cache" : [:],
                 "cheats" : [:],
@@ -76,13 +63,6 @@ public struct DirectoryManager {
                         name: "firmware.bin",
                         nameWithoutExtension: "firmware")
                 ]
-            ],
-            "Guava" : [ // N64
-                "roms" : [:],
-                "sysdata" : [:]
-            ],
-            "Kiwi" : [ // GB/GBC
-                "roms" : [:]
             ],
             "Lychee" : [ // PS1
                 "memcards" : [:],
