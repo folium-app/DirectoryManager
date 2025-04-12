@@ -61,7 +61,36 @@ public struct DirectoryManager {
                         importance: .required,
                         isSystemFile: true,
                         name: "firmware.bin",
-                        nameWithoutExtension: "firmware")
+                        nameWithoutExtension: "firmware"),
+                    
+                    "bios7i.bin" : .init(
+                        core: "Grape",
+                        extension: "bin",
+                        importance: .optional,
+                        isSystemFile: true,
+                        name: "bios7i.bin",
+                        nameWithoutExtension: "bios7i"),
+                    "bios9i.bin" : .init(
+                        core: "Grape",
+                        extension: "bin",
+                        importance: .optional,
+                        isSystemFile: true,
+                        name: "bios9i.bin",
+                        nameWithoutExtension: "bios9i"),
+                    "firmwarei.bin" : .init(
+                        core: "Grape",
+                        extension: "bin",
+                        importance: .optional,
+                        isSystemFile: true,
+                        name: "firmwarei.bin",
+                        nameWithoutExtension: "firmwarei"),
+                    "nandi.bin" : .init(
+                        core: "Grape",
+                        extension: "bin",
+                        importance: .optional,
+                        isSystemFile: true,
+                        name: "nandi.bin",
+                        nameWithoutExtension: "nandi")
                 ]
             ],
             "Lychee" : [ // PS1

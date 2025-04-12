@@ -14,19 +14,15 @@ public struct MissingFile : Codable, Hashable, @unchecked Sendable {
         
         public var color: UIColor {
             switch self {
-            case .optional:
-                .systemOrange
-            case .required:
-                .systemRed
+            case .optional: .systemOrange
+            case .required: .systemRed
             }
         }
         
         public var string: String {
             switch self {
-            case .optional:
-                "Optional"
-            case .required:
-                "Required"
+            case .optional: "Optional"
+            case .required: "Required"
             }
         }
     }
