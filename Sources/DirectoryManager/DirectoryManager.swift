@@ -3,6 +3,7 @@
 
 import Foundation
 
+@MainActor
 public struct DirectoryManager {
     public static let shared = DirectoryManager()
     
