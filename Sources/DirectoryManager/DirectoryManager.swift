@@ -5,7 +5,9 @@ import Foundation
 
 @MainActor
 public struct DirectoryManager {
-    public static let shared = DirectoryManager()
+    public static var shared = DirectoryManager()
+    
+    public var hasMissingFiles: Bool = false
     
     fileprivate var directories: [String : [String : [String : MissingFile]]] {
         [
@@ -162,7 +164,7 @@ public struct DirectoryManager {
         }
     }
     
-    public func scanDirectoryForMissingFiles(for core: String) -> [MissingFile] {
+    public mutating func scanDirectoryForMissingFiles(for core: String) -> [MissingFile] {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         guard let directory = directories.first(where: { $0.key == core }) else {
             return []
@@ -179,6 +181,8 @@ public struct DirectoryManager {
                 }
             }
         }
+        
+        hasMissingFiles = !files.isEmpty
         
         return files
     }
